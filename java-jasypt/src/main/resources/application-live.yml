@@ -1,0 +1,16 @@
+server-01:
+  id: ENC(123123)
+  pw: ENC(123123)
+server-02:
+  id: ENC(123123)
+  pw: ENC(123123)
+
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
+    algorithm: PBEWithMD5AndDES
+    #password: 1234
+    property:
+      prefix: ENC(
+      suffix: =)
+  poolSize: 1
