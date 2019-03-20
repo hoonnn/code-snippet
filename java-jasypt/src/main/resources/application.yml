@@ -1,6 +1,18 @@
-server-01:
-  id: id01
-  pw: pw01
-server-02:
-  id: id02
-  pw: pw02
+server:
+  id: ENC(LTL+wHq0Uso0LsfYSnnPa5n2srUi2pme)
+  pw: ENC(IKBBU69xfXokBfP+JHR9+QYBee3XvHWG)
+
+jasypt: #default setting
+  encryptor:
+    #password: abcd1234 # or -Djasypt.encryptor.password=abcd1234
+    algorithm: PBEWithMD5AndDES
+    keyObtentionIterations: 1000
+    poolSize: 1
+    providerName: SunJCE
+    saltGeneratorClassname: org.jasypt.salt.RandomSaltGenerator
+    ivGeneratorClassname: org.jasypt.salt.NoOpIVGenerator
+    stringOutputType: base64
+    proxyPropertySources: false
+    property:
+      prefix: ENC(
+      suffix: )
